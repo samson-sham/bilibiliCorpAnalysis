@@ -1,7 +1,8 @@
 const path = require('path')
+const withCSS = require('@zeit/next-css')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 
-module.exports = {
+module.exports = withCSS({
 	webpack: (config, { buildId, dev }) => {
 		/**
 		 * Install and Update our Service worker
@@ -35,4 +36,4 @@ module.exports = {
 
 		return config
 	}
-}
+})
